@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SemiNews | 반도체 인사이트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -14,61 +14,12 @@
             "colors": {
                     "surface-container-high": "#141f38",
                     "surface-container-highest": "#192540",
-                    "error-container": "#a70138",
-                    "primary": "#95aaff",
-                    "inverse-on-surface": "#4d556b",
-                    "on-background": "#dee5ff",
-                    "tertiary-dim": "#00deec",
-                    "on-primary": "#00247e",
-                    "on-secondary-fixed": "#344500",
+                    "primary": "#3766ff",
                     "secondary": "#bef500",
-                    "surface-tint": "#95aaff",
-                    "inverse-primary": "#004cef",
-                    "outline": "#6d758c",
-                    "primary-container": "#829bff",
-                    "on-secondary-container": "#eeffbf",
-                    "on-surface-variant": "#a3aac4",
-                    "on-error": "#490013",
-                    "surface-container-lowest": "#000000",
-                    "secondary-container": "#4e6700",
-                    "on-tertiary-fixed-variant": "#005e64",
-                    "surface-dim": "#060e20",
-                    "secondary-fixed-dim": "#b2e600",
-                    "primary-dim": "#3766ff",
-                    "on-primary-container": "#001a63",
-                    "on-tertiary": "#005d63",
-                    "on-tertiary-container": "#005359",
-                    "tertiary-fixed": "#00eefc",
-                    "secondary-dim": "#b2e600",
-                    "on-error-container": "#ffb2b9",
-                    "surface": "#060e20",
-                    "on-secondary-fixed-variant": "#4c6400",
-                    "surface-bright": "#1f2b49",
-                    "tertiary-container": "#00eefc",
-                    "surface-container-low": "#091328",
-                    "tertiary": "#8ff5ff",
-                    "primary-fixed": "#829bff",
-                    "error-dim": "#d73357",
-                    "secondary-fixed": "#bef500",
-                    "error": "#ff6e84",
-                    "primary-fixed-dim": "#6e8cff",
-                    "on-secondary": "#435900",
-                    "on-tertiary-fixed": "#003f43",
-                    "inverse-surface": "#faf8ff",
-                    "tertiary-fixed-dim": "#00deec",
-                    "on-primary-fixed": "#000000",
-                    "surface-variant": "#192540",
-                    "on-primary-fixed-variant": "#002278",
-                    "surface-container": "#0f1930",
                     "background": "#060e20",
                     "on-surface": "#dee5ff",
+                    "on-surface-variant": "#a3aac4",
                     "outline-variant": "#40485d"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
             },
             "fontFamily": {
                     "headline": ["Space Grotesk"],
@@ -79,307 +30,120 @@
         },
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(25, 37, 64, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .syntax-gradient {
-            background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%);
-        }
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(190, 245, 0, 0.2);
-        }
-        .circuit-bg {
-            background-image: radial-gradient(#192540 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(25, 37, 64, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%); }
+        .circuit-bg { background-image: radial-gradient(#192540 1px, transparent 1px); background-size: 32px 32px; }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(149,170,255,0.04)]">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">JoCoding</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline tracking-tight" href="#">About</a>
-<a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline tracking-tight" href="#">Courses</a>
-<a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline tracking-tight" href="#">YouTube</a>
-<a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline tracking-tight" href="#">Contact</a>
-</div>
-<button class="bg-[#bef500] text-[#435900] px-6 py-2 rounded-xl font-bold font-headline tracking-tight hover:scale-95 active:scale-90 transition-all duration-300">
-                Get Started
+    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">SemiNews</div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline" href="#">최신 뉴스</a>
+                <a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline" href="#">시장 데이터</a>
+                <a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline" href="#">산업 분석</a>
+                <a class="text-[#dee5ff] hover:text-[#95aaff] transition-colors font-headline" href="#">제보</a>
+            </div>
+            <button class="bg-[#bef500] text-[#435900] px-6 py-2 rounded-xl font-bold font-headline hover:scale-95 transition-all">
+                구독하기
             </button>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative pt-32 pb-20 px-8 overflow-hidden">
-<div class="absolute inset-0 z-0 pointer-events-none opacity-20">
-<div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
-<div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary rounded-full blur-[120px]"></div>
-</div>
-<div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
-<div class="mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 inline-flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="text-xs font-label text-secondary tracking-widest uppercase">New Era of Coding Education</span>
-</div>
-<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8 leading-[1.1]">
-                    누구나 코딩할 수 있는 세상, <br/>
-<span class="text-secondary">조코딩</span>과 함께하세요
-                </h1>
-<p class="max-w-2xl text-lg md:text-xl text-on-surface-variant mb-12 font-body leading-relaxed">
-                    IT 교육과 엔터테인먼트의 경계를 허무는 독보적인 콘텐츠. <br/>
-                    비전공자부터 전문가까지, 쉽고 재미있게 실무 코딩을 마스터하세요.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 items-center">
-<button class="syntax-gradient text-on-primary px-10 py-4 rounded-xl font-bold font-headline text-lg tracking-tight hover:scale-105 active:scale-95 transition-all shadow-lg">
-                        시작하기
-                    </button>
-<button class="px-10 py-4 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-variant transition-all flex items-center gap-2">
-<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
-                        유튜브 보기
-                    </button>
-</div>
-</div>
-<!-- Hero Image/Visual -->
-<div class="max-w-6xl mx-auto mt-20 relative group">
-<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-<div class="relative aspect-video rounded-2xl overflow-hidden bg-surface-container-lowest border border-outline-variant/10">
-<img class="w-full h-full object-cover" data-alt="Futuristic software development interface with glowing blue lines of code and holographic data visualizations in a dark laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxexkQh1pKq45K8ojIQuAzFUUcOdPI8cwDXj3OkOZMns2A67UoNBIjADfRguCGIHZlkwO5V9oxnrdfxPAm1kH0gsENZ_VVjODuTxdjulXdiuPhwV0ugKR8iOq_UdnGjXH7OxisRzCuDdoGYiej2G-OimgaZvkuXTyM4rcE-rUJDylS_BwqlMpz-xUeamef1aej5YVZX0ahNWLSY380YhzrRHnFOGEKG7wA8-Zwldqa-Pbu2GVSoF1dev7m1NRzE20pCV1QDsuWPJc"/>
-</div>
-</div>
-</section>
-<!-- YouTube Stats -->
-<section class="py-16 bg-surface-container-low border-y border-outline-variant/10">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-<div class="flex flex-col items-center">
-<span class="text-secondary font-headline text-5xl font-bold mb-2">550K+</span>
-<span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">Subscribers</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="text-primary font-headline text-5xl font-bold mb-2">85M+</span>
-<span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">Total Views</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="text-tertiary font-headline text-5xl font-bold mb-2">1,200+</span>
-<span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">Video Content</span>
-</div>
-</div>
-</section>
-<!-- Content Categories - Bento Grid -->
-<section class="py-24 px-8 max-w-7xl mx-auto">
-<div class="mb-16">
-<h2 class="font-headline text-4xl font-bold tracking-tight mb-4">학습 카테고리</h2>
-<p class="text-on-surface-variant font-body">최신 트렌드를 반영한 다양한 IT 분야를 정복하세요.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-<!-- Python -->
-<div class="md:col-span-2 group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="High-contrast digital abstract representing Python programming with serpentine green glowing patterns on a black surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7fX2Bm3X-_3yLWNSzxhqX7N9KGWVJOyYGBg490k7KoIUYJHK0D7oS9e-fpQ132S9HzeDtBFKgb3k12GdTpyCxjrUiikXjuXKMsdS6kIpvXXoO2nYgh7wQf9ycG92h1oPwexOMplmO2SXFmKvO_-7VmeZk3IYFhqiVIho6Bcq5LpdnjWSv8UsN-Iumq0rOR_skYIsxkxi1UckBV24A3jiw4KXSiJYNwrIcr95WkFHJUNRk1gQ_d0-K40cKWVSLuNsRzOnH6xA3J7Y"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
-<div class="absolute bottom-0 p-8">
-<span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block">Foundations</span>
-<h3 class="text-2xl font-headline font-bold text-white mb-2">Python</h3>
-<p class="text-on-surface-variant text-sm line-clamp-2">가장 쉽고 강력한 언어, 파이썬 기초부터 자동화까지 완벽 가이드.</p>
-</div>
-</div>
-<!-- AI/ML -->
-<div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract visualization of artificial intelligence neural networks with luminescent points of light connected by thin digital threads" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtq9iq7_zxnDXBUz1RT_Y5n3rf6Sf3bxwdl0eRRMnqFyd3UQ7f0nKGYv4xG-nPamULn_9zG7HQvPbA3iO78C4KNmdhJP-V95qy7H3r0SPsgV0pxv9fYvT_L18ndg7WYeAjU9RrpG29sJ3ZHSc9CUhEFc88vZfVhg-AVozHjBlyIrnslOpa38zNLJm_IU_GaZ3Hp5mp8gZjp1a1-We_eTPf-cEZaAL4Nl9Q0XSgV5_1f_VPv6oWYCwBti2suApy8cA4vmofmucjbXM"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
-<div class="absolute bottom-0 p-8">
-<span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Advanced</span>
-<h3 class="text-xl font-headline font-bold text-white mb-2">AI/Machine Learning</h3>
-</div>
-</div>
-<!-- Web Dev -->
-<div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Clean minimalist workspace with a high-end laptop displaying modern web architecture code and glowing cyan highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UlmIJcNZTKmPE4_GO27AcjINtS06Gxbs3QRktnrAnKh1SjUjAO_Ftf6SxMs6iTe3S7jdCEBMdzSzd_L3rux82jBzvTWz_6SRzaeIXeU1eIZbpfjv4ui68V46ZOMSmuv9-Bl0vftsFaR5-OCS8lwtVezIS7c7_oRUaFRZ55qkXag4yDsGB7CV11MLO1KOV_EYU_XToBnx0PjFswaVxV81zH-tYMqnSkX1pNqLz4blgJPwYqN5zS7LZ4W0Mf4wnd_VbrhXvQ6ZpJE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
-<div class="absolute bottom-0 p-8">
-<span class="text-tertiary font-label text-xs tracking-widest uppercase mb-2 block">Practical</span>
-<h3 class="text-xl font-headline font-bold text-white mb-2">Web Development</h3>
-</div>
-</div>
-<!-- App Dev -->
-<div class="md:col-span-4 group relative h-[240px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.01] transition-all duration-500 flex items-center justify-between px-12">
-<div class="relative z-10 max-w-lg">
-<span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block">Mobile Era</span>
-<h3 class="text-3xl font-headline font-bold text-white mb-4">App Development</h3>
-<p class="text-on-surface-variant">Flutter와 React Native로 안드로이드/iOS 동시 개발 마스터.</p>
-</div>
-<div class="hidden md:block relative h-full w-1/3">
-<img class="w-full h-full object-contain transform rotate-12 group-hover:rotate-6 transition-transform duration-500" data-alt="Multiple mobile phones displaying sleek modern application interfaces with vibrant neon gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuishlwkIA6_ji3ei-3j9plHS3LBnVlq0VSq3QOsLBJBKP-v_InG_65wSkwmwksJqDxAb9IS7Ke5RLqm2UNKV7g5izdpzVOG0pg1n67pgHTFAN-aodECZf_X3THXh90-kzA8X413uycrJrtnMJFPbs0Yqex8ty6WE7qXjeobjTeTmDxCI0UyI36f1Xx8zJbNGXOwgKBhxadccYCQBx04lKLcMDIOFvKugc7OdzsQKQ8KFxMa9wpCfqcU73OeNlOHvhpSF4UzunZpM"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Video -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="relative">
-<div class="absolute -inset-4 bg-secondary/10 blur-2xl rounded-full"></div>
-<div class="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20">
-<img class="w-full h-full object-cover" data-alt="Cinematic frame of a coding tutorial video showing a creative desk setup and high-quality studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYLSBiduAAhXuhQKJKF2V9-hTLYE46b0Kg7ibtCsicjVV_1ADbmH3-56curx40v2o_4umbpCrfj8C1u7YadDwj7hwDfpEJKyScayDeNitQzWGKS_DI3upLd-oNQbE28pH8U7r1yPSQrGjhWOFzG2dSUEQ_bgajMb11VPJ7OHseywr5m5qW5rmlYwkojepMkXwag0YWi60SI_lsOjwGgjA919FKf93m1jq8rKZPKoMDQXZCTDdmA2mxOhd4l2a3NDFVVluXupDUz4w"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-on-secondary text-4xl" data-icon="play_arrow" data-weight="fill">play_arrow</span>
-</div>
-</div>
-</div>
-</div>
-<div>
-<h2 class="font-headline text-4xl font-bold mb-6 tracking-tight">누구나 앱을 만들 수 있습니다</h2>
-<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                        복잡한 코딩 이론보다는 실제 결과물을 만드는 재미를 느껴보세요. 조코딩의 독보적인 강의 커리큘럼은 여러분이 꿈꾸는 아이디어를 단 몇 시간 만에 현실로 만들어 드립니다.
-                    </p>
-<ul class="space-y-4 mb-10">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
-<span>코딩 한 줄 모르는 비전공자 환영</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
-<span>실전 프로젝트 중심의 속성 커리큘럼</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
-<span>최신 AI 툴을 활용한 생산성 극대화</span>
-</li>
-</ul>
-<button class="bg-surface-variant px-8 py-3 rounded-xl font-bold font-headline border border-outline-variant/30 hover:border-secondary transition-all">
-                        유튜브에서 더 보기
-                    </button>
-</div>
-</div>
-</section>
-<!-- Vision/About -->
-<section class="py-32 relative overflow-hidden circuit-bg">
-<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
-<div class="max-w-4xl mx-auto px-8 relative z-10 text-center">
-<span class="text-secondary font-label tracking-[0.3em] uppercase text-xs mb-8 block">Our Mission</span>
-<h2 class="font-headline text-4xl md:text-5xl font-bold mb-12 leading-tight">
-                    모두를 위한 코딩 교육,<br/>
-                    장벽을 낮추고 <span class="text-primary">재미</span>를 더합니다.
-                </h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-<div class="space-y-4">
-<h4 class="text-xl font-headline font-bold text-secondary">Complexity to Simplicity</h4>
-<p class="text-on-surface-variant font-body">우리는 어려운 프로그래밍 개념을 일상 언어와 비유로 풀어내어 누구나 이해할 수 있게 만듭니다. 복잡함은 우리가 처리하고, 여러분은 창의력에만 집중하세요.</p>
-</div>
-<div class="space-y-4">
-<h4 class="text-xl font-headline font-bold text-primary">Learning by Entertaining</h4>
-<p class="text-on-surface-variant font-body">공부는 지루해야 한다는 편견을 깨고, 예능보다 재미있는 코딩 콘텐츠를 지향합니다. 즐거움이 동기가 될 때 가장 빠른 성장이 일어납니다.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials -->
-<section class="py-24 px-8 max-w-7xl mx-auto">
-<div class="text-center mb-20">
-<h2 class="font-headline text-4xl font-bold mb-4">함께 성장하는 커뮤니티</h2>
-<p class="text-on-surface-variant">이미 수많은 분들이 조코딩과 함께 개발자의 꿈을 이뤘습니다.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Review 1 -->
-<div class="bg-surface-container-high p-8 rounded-2xl border border-outline-variant/10 relative group hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20 absolute top-6 right-6" data-icon="format_quote">format_quote</span>
-<p class="text-on-surface mb-8 font-body leading-relaxed italic">"비전공자라 코딩은 엄두도 못 냈는데, 조코딩님 채널 덕분에 앱을 직접 출시해봤어요. 정말 인생의 터닝포인트였습니다!"</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
-</div>
-<div>
-<p class="font-bold font-headline">김민지</p>
-<p class="text-xs text-on-surface-variant font-label">마케터 → 프론트엔드 개발자</p>
-</div>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="bg-surface-container-high p-8 rounded-2xl border border-outline-variant/10 relative group hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20 absolute top-6 right-6" data-icon="format_quote">format_quote</span>
-<p class="text-on-surface mb-8 font-body leading-relaxed italic">"파이썬 자동화 강의 최고예요! 회사 업무 시간이 절반으로 줄어들었습니다. 부장님도 놀라시네요."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary" data-icon="person">person</span>
-</div>
-<div>
-<p class="font-bold font-headline">박성현</p>
-<p class="text-xs text-on-surface-variant font-label">대기업 사무직</p>
-</div>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="bg-surface-container-high p-8 rounded-2xl border border-outline-variant/10 relative group hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20 absolute top-6 right-6" data-icon="format_quote">format_quote</span>
-<p class="text-on-surface mb-8 font-body leading-relaxed italic">"AI 활용법 강의는 정말 혁신적입니다. 이제 AI 없이 어떻게 코딩했나 싶을 정도예요. 최고의 인사이트를 얻었습니다."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-tertiary-container/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary" data-icon="person">person</span>
-</div>
-<div>
-<p class="font-bold font-headline">이준호</p>
-<p class="text-xs text-on-surface-variant font-label">프리랜서 개발자</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="py-24 px-8">
-<div class="max-w-5xl mx-auto syntax-gradient rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden">
-<div class="absolute inset-0 circuit-bg opacity-10"></div>
-<div class="relative z-10">
-<h2 class="text-on-primary font-headline text-4xl md:text-5xl font-bold mb-8 tracking-tighter">망설이지 말고 지금 바로 도전하세요.</h2>
-<p class="text-on-primary/80 text-lg mb-12 max-w-2xl mx-auto">코딩은 더 이상 특권이 아닙니다. 모두가 누릴 수 있는 강력한 무기입니다.</p>
-<button class="bg-white text-primary-dim px-12 py-4 rounded-xl font-bold font-headline text-xl hover:scale-105 active:scale-95 transition-all shadow-2xl">
-                        강의 신청하기
-                    </button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#060e20] w-full border-t border-[#dee5ff]/10">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-12 max-w-7xl mx-auto">
-<div>
-<div class="text-lg font-bold text-[#dee5ff] font-headline mb-6">JoCoding</div>
-<p class="text-[#dee5ff]/60 font-['Manrope'] text-sm leading-relaxed">
-                    IT 지식의 대중화를 꿈꾸는 No.1 코딩 엔터테이너.<br/>
-                    함께 성장하고 나누는 즐거움을 가르칩니다.
-                </p>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="flex flex-col gap-3">
-<span class="text-[#dee5ff] font-bold text-sm mb-2">Social</span>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">YouTube</a>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">Instagram</a>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">GitHub</a>
-</div>
-<div class="flex flex-col gap-3">
-<span class="text-[#dee5ff] font-bold text-sm mb-2">Resources</span>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">Newsletter</a>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">Community</a>
-<a class="text-[#dee5ff]/60 hover:text-[#bef500] transition-colors text-sm" href="#">Contact</a>
-</div>
-</div>
-<div class="flex flex-col justify-between">
-<div class="bg-surface-container p-4 rounded-xl border border-outline-variant/10">
-<p class="text-[#dee5ff]/60 text-xs mb-2">Subscribe to our update</p>
-<div class="flex gap-2">
-<input class="bg-background border-none rounded-lg text-sm w-full focus:ring-secondary" placeholder="Email" type="text"/>
-<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-bold text-xs">Join</button>
-</div>
-</div>
-<div class="text-[#dee5ff]/60 font-['Manrope'] text-xs mt-8">
-                    © 2024 JoCoding. Built for the next generation.
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative pt-32 pb-20 px-8 overflow-hidden">
+            <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
+                <div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary rounded-full blur-[120px]"></div>
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
+                <div class="mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 inline-flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    <span class="text-xs font-label text-secondary tracking-widest uppercase">Semiconductor Industry Insights</span>
                 </div>
-</div>
-</div>
-</footer>
-</body></html>
+                <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8 leading-[1.1]">
+                    세상을 움직이는 실리콘, <br/>
+                    <span class="text-secondary">SemiNews</span>와 함께하세요
+                </h1>
+                <p class="max-w-2xl text-lg md:text-xl text-on-surface-variant mb-12 font-body leading-relaxed">
+                    글로벌 반도체 패권 다툼과 기술 혁신의 중심에서 <br/>
+                    가장 정확하고 빠른 뉴스를 전달합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
+                    <button class="syntax-gradient text-white px-10 py-4 rounded-xl font-bold font-headline text-lg hover:scale-105 transition-all">뉴스 레터 구독</button>
+                    <button class="px-10 py-4 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-variant transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">analytics</span> 리포트 보기
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-16 bg-surface-container-low border-y border-outline-variant/10">
+            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="flex flex-col items-center">
+                    <span class="text-secondary font-headline text-5xl font-bold mb-2">3.2%</span>
+                    <span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">SOX Index (Today)</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-primary font-headline text-5xl font-bold mb-2">2nm</span>
+                    <span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">Next-Gen Node Race</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-white font-headline text-5xl font-bold mb-2">$500B+</span>
+                    <span class="text-on-surface-variant font-label tracking-widest uppercase text-sm">Market Opportunity</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Bento Grid -->
+        <section class="py-24 px-8 max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">최신 산업 동향</h2>
+                <p class="text-on-surface-variant font-body">반도체 생태계의 핵심 변화를 추적합니다.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high">
+                    <img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block">Foundry</span>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-2">TSMC vs Samsung</h3>
+                        <p class="text-on-surface-variant text-sm">2nm 공정 양산을 위한 글로벌 파운드리 거인들의 소리 없는 전쟁.</p>
+                    </div>
+                </div>
+                <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high">
+                    <img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1591444029514-996ff69d30f1?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Memory</span>
+                        <h3 class="text-xl font-headline font-bold text-white mb-2">HBM4 Standard</h3>
+                    </div>
+                </div>
+                <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high">
+                    <img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <span class="text-white font-label text-xs tracking-widest uppercase mb-2 block">AI</span>
+                        <h3 class="text-xl font-headline font-bold text-white mb-2">NVIDIA Blackwell</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-background w-full border-t border-outline-variant/10 py-12 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-bold font-headline">SemiNews</div>
+            <p class="text-on-surface-variant text-sm">© 2026 SemiNews. Built for the tech generation.</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors">Twitter</a>
+                <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>조코딩 | 누구나 코딩할 수 있는 세상</title>
+    <title>SemiNews | 글로벌 반도체 최신 뉴스 및 인사이트</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -34,24 +34,15 @@
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%); }
         
-        /* 테마별 배경색 정의 */
-        /* 라이트 모드 스타일 강제 조정 */
-        html:not(.dark) body {
-            background-color: #f8fafc;
-            color: #0f172a;
-        }
+        /* 라이트 모드 스타일 */
+        html:not(.dark) body { background-color: #f8fafc; color: #0f172a; }
         html:not(.dark) .bg-background { background-color: #f8fafc; }
         html:not(.dark) .text-on-surface { color: #1e293b; }
         html:not(.dark) .text-on-surface-variant { color: #475569; }
         html:not(.dark) .bg-surface-container-high { background-color: #ffffff; border: 1px solid #e2e8f0; }
         html:not(.dark) .bg-surface-container-low { background-color: #f1f5f9; }
         html:not(.dark) nav { background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #e2e8f0; }
-        html:not(.dark) .text-[#dee5ff] { color: #0f172a; }
         html:not(.dark) .circuit-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 32px 32px; }
-        html:not(.dark) footer { background-color: #f1f5f9; border-top: 1px solid #e2e8f0; }
-        html:not(.dark) .bg-surface-variant { background-color: #e2e8f0; }
-        html:not(.dark) .input-field { background-color: #ffffff; border-color: #cbd5e1; color: #0f172a; }
-        html:not(.dark) .input-field:focus { border-color: #3766ff; }
 
         .input-field {
             width: 100%;
@@ -70,78 +61,24 @@
 
         .circuit-bg { background-image: radial-gradient(#192540 1px, transparent 1px); background-size: 32px 32px; }
         html { scroll-behavior: smooth; }
-        </style>
-        </head>
-        <body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
-        ...
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 px-8 max-w-3xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">제휴 및 문의</h2>
-                <p class="text-on-surface-variant">조코딩과의 협업 제안이나 궁금한 점을 남겨주세요.</p>
-            </div>
-            <form action="https://formspree.io/f/xnjoepep" method="POST" class="space-y-6 bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-label mb-2 opacity-70">이름</label>
-                        <input type="text" name="name" class="input-field" placeholder="홍길동" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-label mb-2 opacity-70">이메일</label>
-                        <input type="email" name="_replyto" class="input-field" placeholder="example@email.com" required>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-label mb-2 opacity-70">제목</label>
-                    <input type="text" name="subject" class="input-field" placeholder="제휴 문의 드립니다" required>
-                </div>
-                <div>
-                    <label class="block text-sm font-label mb-2 opacity-70">내용</label>
-                    <textarea name="message" rows="5" class="input-field" placeholder="문의 내용을 입력해주세요" required></textarea>
-                </div>
-                <button type="submit" class="w-full syntax-gradient text-white py-4 rounded-xl font-bold font-headline text-lg hover:scale-[1.02] transition-all shadow-lg">
-                    문의 보내기
-                </button>
-                </form>
-                </section>
-
-                <!-- Disqus Comments Section -->
-                <section id="comments" class="py-24 px-8 max-w-5xl mx-auto">
-                <div class="text-center mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">댓글</h2>
-                <p class="text-on-surface-variant">자유롭게 의견을 남겨주세요.</p>
-                </div>
-                <div class="bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10">
-                <div id="disqus_thread"></div>
-                <script>
-                    (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://test1-smoqomuh9u.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                </div>
-                </section>
-                </main>    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm transition-colors duration-300">
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm transition-colors duration-300">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">조코딩</div>
+            <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">SemiNews</div>
             <div class="hidden md:flex items-center gap-10">
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#">About</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#categories">Courses</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#contact">Contact</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="https://www.youtube.com/@jocoding" target="_blank">YouTube</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#">최신 뉴스</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#categories">시장 동향</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#contact">제보/문의</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#">산업 분석</a>
             </div>
             <div class="flex items-center gap-4">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="p-2 rounded-xl bg-surface-container-high hover:scale-110 transition-all border border-outline-variant/20 flex items-center justify-center">
                     <span id="theme-icon" class="material-symbols-outlined text-secondary">dark_mode</span>
                 </button>
                 <button class="bg-[#bef500] text-[#435900] px-6 py-2 rounded-xl font-bold font-headline hover:scale-95 active:scale-90 transition-all">
-                    Get Started
+                    구독하기
                 </button>
             </div>
         </div>
@@ -155,18 +92,22 @@
                 <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary rounded-full blur-[120px]"></div>
             </div>
             <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
+                <div class="mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 inline-flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    <span class="text-xs font-label text-secondary tracking-widest uppercase">Breaking News: HBM4 Standards Confirmed</span>
+                </div>
                 <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1]">
-                    누구나 코딩할 수 있는 세상, <br/>
-                    <span class="text-secondary dark:text-secondary">조코딩</span>과 함께하세요
+                    미래를 설계하는 실리콘, <br/>
+                    <span class="text-secondary dark:text-secondary">SemiNews</span>와 함께하세요
                 </h1>
                 <p class="max-w-2xl text-lg md:text-xl text-on-surface-variant mb-12 font-body leading-relaxed">
-                    IT 교육과 엔터테인먼트의 경계를 허무는 독보적인 콘텐츠. <br/>
-                    비전공자부터 전문가까지, 쉽고 재미있게 실무 코딩을 마스터하세요.
+                    삼성전자, SK하이닉스, TSMC, NVIDIA 등 글로벌 반도체 기업들의 <br/>
+                    최신 소식과 심도 있는 시장 분석을 실시간으로 전해드립니다.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 items-center">
-                    <button class="syntax-gradient text-white px-10 py-4 rounded-xl font-bold font-headline text-lg shadow-lg hover:scale-105 transition-all">시작하기</button>
-                    <a href="https://www.youtube.com/@jocoding" target="_blank" class="px-10 py-4 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-variant transition-all flex items-center gap-2">
-                        <span class="material-symbols-outlined">play_circle</span> 유튜브 보기
+                    <button class="syntax-gradient text-white px-10 py-4 rounded-xl font-bold font-headline text-lg shadow-lg hover:scale-105 transition-all">최신 뉴스 보기</button>
+                    <a href="#" class="px-10 py-4 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-variant transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">trending_up</span> 시장 데이터
                     </a>
                 </div>
             </div>
@@ -175,52 +116,86 @@
         <!-- Categories Section (Bento Grid) -->
         <section id="categories" class="py-24 px-8 max-w-7xl mx-auto">
             <div class="mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">학습 카테고리</h2>
-                <p class="text-on-surface-variant font-body">최신 트렌드를 반영한 다양한 IT 분야를 정복하세요.</p>
+                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">주요 뉴스 카테고리</h2>
+                <p class="text-on-surface-variant font-body">분야별 핵심 반도체 트렌드를 확인하세요.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="md:col-span-2 group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="Python" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7fX2Bm3X-_3yLWNSzxhqX7N9KGWVJOyYGBg490k7KoIUYJHK0D7oS9e-fpQ132S9HzeDtBFKgb3k12GdTpyCxjrUiikXjuXKMsdS6kIpvXXoO2nYgh7wQf9ycG92h1oPwexOMplmO2SXFmKvO_-7VmeZk3IYFhqiVIho6Bcq5LpdnjWSv8UsN-Iumq0rOR_skYIsxkxi1UckBV24A3jiw4KXSiJYNwrIcr95WkFHJUNRk1gQ_d0-K40cKWVSLuNsRzOnH6xA3J7Y"/>
+                    <img class="absolute inset-0 w-full h-full object-cover" alt="Foundry" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"/>
                     <div class="absolute bottom-0 p-8 z-20">
-                        <h3 class="text-2xl font-headline font-bold text-white mb-2">Python</h3>
-                        <p class="text-gray-300 text-sm">가장 쉽고 강력한 언어, 파이썬 기초부터 자동화까지.</p>
+                        <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block">Manufacturing</span>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-2">Foundry & Logic</h3>
+                        <p class="text-gray-300 text-sm">TSMC, 삼성전자, 인텔의 2nm 공정 경쟁과 파운드리 시장 재편 소식.</p>
                     </div>
                 </div>
                 <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="AI" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtq9iq7_zxnDXBUz1RT_Y5n3rf6Sf3bxwdl0eRRMnqFyd3UQ7f0nKGYv4xG-nPamULn_9zG7HQvPbA3iO78C4KNmdhJP-V95qy7H3r0SPsgV0pxv9fYvT_L18ndg7WYeAjU9RrpG29sJ3ZHSc9CUhEFc88vZfVhg-AVozHjBlyIrnslOpa38zNLJm_IU_GaZ3Hp5mp8gZjp1a1-We_eTPf-cEZaAL4Nl9Q0XSgV5_1f_VPv6oWYCwBti2suApy8cA4vmofmucjbXM"/>
+                    <img class="absolute inset-0 w-full h-full object-cover" alt="Memory" src="https://images.unsplash.com/photo-1591444029514-996ff69d30f1?auto=format&fit=crop&q=80&w=1000"/>
                     <div class="absolute bottom-0 p-8 z-20">
-                        <h3 class="text-xl font-headline font-bold text-white">AI / Machine Learning</h3>
+                        <span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Storage</span>
+                        <h3 class="text-xl font-headline font-bold text-white">Memory (HBM/DRAM)</h3>
+                        <p class="text-gray-300 text-xs">AI 시대를 이끄는 HBM4 개발 현황과 차세대 기술.</p>
                     </div>
                 </div>
                 <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="Web" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UlmIJcNZTKmPE4_GO27AcjINtS06Gxbs3QRktnrAnKh1SjUjAO_Ftf6SxMs6iTe3S7jdCEBMdzSzd_L3rux82jBzvTWz_6SRzaeIXeU1eIZbpfjv4ui68V46ZOMSmuv9-Bl0vftsFaR5-OCS8lwtVezIS7c7_oRUaFRZ55qkXag4yDsGB7CV11MLO1KOV_EYU_XToBnx0PjFswaVxV81zH-tYMqnSkX1pNqLz4blgJPwYqN5zS7LZ4W0Mf4wnd_VbrhXvQ6ZpJE"/>
+                    <img class="absolute inset-0 w-full h-full object-cover" alt="AI Chips" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"/>
                     <div class="absolute bottom-0 p-8 z-20">
-                        <h3 class="text-xl font-headline font-bold text-white">Web Development</h3>
+                        <span class="text-tertiary font-label text-xs tracking-widest uppercase mb-2 block">Intelligence</span>
+                        <h3 class="text-xl font-headline font-bold text-white">AI & GPU</h3>
+                        <p class="text-gray-300 text-xs">NVIDIA Blackwell 아키텍처와 글로벌 AI 패권 다툼.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-8 max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">제휴 및 제보</h2>
+                <p class="text-on-surface-variant">SemiNews와의 협업 제안이나 중요한 반도체 업계 제보를 남겨주세요.</p>
+            </div>
+            <form action="#" method="POST" class="space-y-6 bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-label mb-2 opacity-70">이름</label>
+                        <input type="text" class="input-field" placeholder="홍길동" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label mb-2 opacity-70">이메일</label>
+                        <input type="email" class="input-field" placeholder="example@email.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-label mb-2 opacity-70">제목</label>
+                    <input type="text" class="input-field" placeholder="뉴스 제보 드립니다" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-label mb-2 opacity-70">내용</label>
+                    <textarea rows="5" class="input-field" placeholder="내용을 입력해주세요" required></textarea>
+                </div>
+                <button type="submit" class="w-full syntax-gradient text-white py-4 rounded-xl font-bold font-headline text-lg hover:scale-[1.02] transition-all shadow-lg">
+                    메시지 보내기
+                </button>
+            </form>
+        </section>
     </main>
 
     <footer class="bg-surface-container-low w-full border-t border-outline-variant/10 py-12 text-center">
-        <div class="text-lg font-bold text-on-surface font-headline mb-4">조코딩</div>
-        <p class="text-on-surface-variant text-sm mb-6">© 2026 조코딩. 누구나 쉽게 배우는 코딩 교육.</p>
+        <div class="text-lg font-bold text-on-surface font-headline mb-4">SemiNews</div>
+        <p class="text-on-surface-variant text-sm mb-6">© 2026 SemiNews. 글로벌 반도체 시장의 신속하고 정확한 정보 전달.</p>
         <div class="flex justify-center gap-6">
-            <a href="https://www.youtube.com/@jocoding" target="_blank" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">youtube_activity</span></a>
-            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">potted_plant</span></a>
+            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">rss_feed</span></a>
+            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">podcasts</span></a>
         </div>
     </footer>
 
     <script>
-        // 다크모드/화이트모드 전환 로직
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
 
-        // 초기 테마 설정 (로컬 스토리지 확인)
         const currentTheme = localStorage.getItem('theme') || 'dark';
         if (currentTheme === 'light') {
             html.classList.remove('dark');
