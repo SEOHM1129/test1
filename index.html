@@ -35,8 +35,6 @@
         .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%); }
         
         /* 테마별 배경색 정의 */
-        body { transition: background-color 0.3s, color 0.3s; }
-        
         /* 라이트 모드 스타일 강제 조정 */
         html:not(.dark) body {
             background-color: #f8fafc;
@@ -52,19 +50,70 @@
         html:not(.dark) .circuit-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 32px 32px; }
         html:not(.dark) footer { background-color: #f1f5f9; border-top: 1px solid #e2e8f0; }
         html:not(.dark) .bg-surface-variant { background-color: #e2e8f0; }
+        html:not(.dark) .input-field { background-color: #ffffff; border-color: #cbd5e1; color: #0f172a; }
+        html:not(.dark) .input-field:focus { border-color: #3766ff; }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            background-color: #141f38;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #dee5ff;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .input-field:focus {
+            border-color: #bef500;
+            box-shadow: 0 0 0 2px rgba(190, 245, 0, 0.2);
+        }
 
         .circuit-bg { background-image: radial-gradient(#192540 1px, transparent 1px); background-size: 32px 32px; }
         html { scroll-behavior: smooth; }
-    </style>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
-    <!-- TopNavBar -->
+        </style>
+        </head>
+        <body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+        ...
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-8 max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">제휴 및 문의</h2>
+                <p class="text-on-surface-variant">조코딩과의 협업 제안이나 궁금한 점을 남겨주세요.</p>
+            </div>
+            <form action="https://formspree.io/f/xnjoepep" method="POST" class="space-y-6 bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-label mb-2 opacity-70">이름</label>
+                        <input type="text" name="name" class="input-field" placeholder="홍길동" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-label mb-2 opacity-70">이메일</label>
+                        <input type="email" name="_replyto" class="input-field" placeholder="example@email.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-label mb-2 opacity-70">제목</label>
+                    <input type="text" name="subject" class="input-field" placeholder="제휴 문의 드립니다" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-label mb-2 opacity-70">내용</label>
+                    <textarea name="message" rows="5" class="input-field" placeholder="문의 내용을 입력해주세요" required></textarea>
+                </div>
+                <button type="submit" class="w-full syntax-gradient text-white py-4 rounded-xl font-bold font-headline text-lg hover:scale-[1.02] transition-all shadow-lg">
+                    문의 보내기
+                </button>
+            </form>
+        </section>
+        </main>
     <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm transition-colors duration-300">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
             <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">조코딩</div>
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#">About</a>
                 <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#categories">Courses</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="#contact">Contact</a>
                 <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="https://www.youtube.com/@jocoding" target="_blank">YouTube</a>
             </div>
             <div class="flex items-center gap-4">
