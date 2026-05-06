@@ -114,8 +114,33 @@ const careerData = {
     }
 };
 
+const newsData = [
+    {
+        "id": "hbm4-hybrid-bonding",
+        "title": "2026년형 차세대 HBM4 하이브리드 본딩 공정 전환 가속화",
+        "date": "2026.05.06",
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+        "summary": [
+            "JEDEC의 HBM4 표준 확정에 따라 적층 단수가 16단 이상으로 확대",
+            "기존 TC-NCF 방식의 한계를 극복하기 위해 하이브리드 본딩(Hybrid Bonding) 도입 필수적",
+            "삼성전자와 SK하이닉스, 하이브리드 본딩 장비 수급 및 수율 확보 경쟁 돌입"
+        ],
+        "commentary": "하이브리드 본딩은 솔더볼(Solder Ball) 없이 구리(Cu)와 구리를 직접 연결하는 기술입니다. 이를 통해 칩 사이의 간격을 없애 전송 속도를 높이고 두께를 줄일 수 있지만, 미세 오염에 극도로 취약하여 클린룸 수준의 고도화가 요구됩니다.",
+        "points": {
+            "Process": "CMP 공정의 정밀도 향상 및 본딩 계면의 보이드(Void) 제어가 핵심 수율 결정 요소입니다.",
+            "Design": "배선 밀도 증가에 따른 신호 간섭(Crosstalk) 방지 설계 및 전력 무결성(Power Integrity) 확보가 필요합니다.",
+            "Equipment": "플라즈마 활성화 장비 및 나노미터 단위의 다이 투 웨이퍼(D/W) 본더 장비 유지보수 역량이 중요합니다."
+        },
+        "interviewGuide": {
+            "question": "HBM4에서 하이브리드 본딩 도입 시 예상되는 가장 큰 기술적 난제와 본인의 해결 아이디어는?",
+            "tip": "핵심은 '열 방출'과 '정렬(Alignment)'입니다. 답변 시 '적층 단수 증가에 따른 열 방출 면적 감소 문제를 해결하기 위해 고방열 소재를 적용하거나, 열 전달 경로(Thermal Path)를 최적화하는 설계적 접근이 필요함'을 언급하면 좋습니다. 또한, Cu-Cu 본딩 시 정렬 오차를 줄이기 위한 센서 데이터 기반의 설비 제어 최적화 경험을 연결해보세요."
+        }
+    }
+];
+
 window.semiData = {
     dictionary: dictionaryData,
     quiz: quizData,
-    careers: careerData
+    careers: careerData,
+    news: newsData
 };
