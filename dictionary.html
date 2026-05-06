@@ -88,7 +88,7 @@
         </div>
     </main>
 
-    <script src="js/data.js"></script>
+    <script src="js/data.js?v=096e3dd"></script>
     <script>
         const dictionary = window.semiData.dictionary;
         const grid = document.getElementById('dictionary-grid');
@@ -161,6 +161,16 @@
             } else {
                 html.classList.add('dark');
                 themeIcon.innerText = 'dark_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Initial render
+        renderDictionary();
+    </script>
+</body>
+</html>
+_mode';
                 localStorage.setItem('theme', 'dark');
             }
         });

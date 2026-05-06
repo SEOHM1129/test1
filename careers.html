@@ -97,7 +97,7 @@
         </section>
     </main>
 
-    <script src="js/data.js"></script>
+    <script src="js/data.js?v=096e3dd"></script>
     <script>
         const careers = window.semiData.careers;
         const grid = document.getElementById('careers-grid');
@@ -147,6 +147,15 @@
             } else {
                 html.classList.add('dark');
                 themeIcon.innerText = 'dark_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        renderCareers();
+    </script>
+</body>
+</html>
+  themeIcon.innerText = 'dark_mode';
                 localStorage.setItem('theme', 'dark');
             }
         });
