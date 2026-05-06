@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>최신 반도체 뉴스 | SemiWiki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#141f38",
+                    "surface-container-highest": "#192540",
+                    "primary": "#3766ff",
+                    "secondary": "#bef500",
+                    "background": "#060e20",
+                    "on-surface": "#dee5ff",
+                    "on-surface-variant": "#a3aac4",
+                    "outline-variant": "#40485d"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%); }
+        html:not(.dark) body { background-color: #f8fafc; color: #0f172a; }
+        html:not(.dark) .bg-background { background-color: #f8fafc; }
+        html:not(.dark) .bg-surface-container-high { background-color: #ffffff; border: 1px solid #e2e8f0; }
+        .news-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .news-card:hover { transform: translateY(-4px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm transition-colors duration-300 border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#bef500] text-3xl">memory</span>
+                <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">SemiWiki</div>
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-[#bef500] transition-colors font-headline" href="news.html">최신 뉴스</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="quiz.html">반도체 퀴즈</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="dictionary.html">용어사전</a>
+                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="careers.html">취업로드맵</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-xl bg-surface-container-high hover:scale-110 transition-all border border-outline-variant/20 flex items-center justify-center">
+                    <span id="theme-icon" class="material-symbols-outlined text-secondary">dark_mode</span>
+                </button>
+                <a href="index.html" class="text-sm font-label text-on-surface-variant hover:text-secondary">메인으로 돌아가기</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+        <header class="mb-16">
+            <h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-4">최신 반도체 뉴스</h1>
+            <p class="text-on-surface-variant text-lg">글로벌 반도체 산업의 최신 소식을 실시간으로 확인하세요. (2026년 4월 22일 기준)</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="news-container">
+            <!-- News Item 1 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="HBM4">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-wider">Memory</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.22</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">JEDEC, HBM4 표준 최종 확정... 삼성·SK '2027년 양산' 속도</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">반도체 표준 기구 JEDEC이 차세대 고대역폭 메모리(HBM4)의 물리 규격과 전송 표준을 확정했습니다. 삼성전자와 SK하이닉스는 16단 및 20단 적층 기술을 적용한 시제품 개발에 박차를 가하고 있습니다.</p>
+                    <a href="https://www.jedec.org/news/pressreleases" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+
+            <!-- News Item 2 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="Foundry">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Foundry</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.21</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">TSMC, 애리조나 2공장 가동 시작... 2nm 공정 양산 체제 돌입</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">TSMC가 미국 애리조나주에 위치한 두 번째 파운드리 공장에서 본격적인 2nm(나노미터) 공정 가동을 시작했다고 발표했습니다. 이는 NVIDIA와 애플의 차세대 칩 생산을 위한 전략적 거점이 될 전망입니다.</p>
+                    <a href="https://www.tsmc.com/english/news-release" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+
+            <!-- News Item 3 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="AI Chip">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider">AI/GPU</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.20</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">NVIDIA, 'Vera Rubin' 아키텍처 공식 발표... 성능 5배 향상</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">NVIDIA가 블랙웰(Blackwell)을 잇는 차세대 GPU 아키텍처 '베라 루빈(Vera Rubin)'을 공개했습니다. 전용 HBM4 메모리와 결합하여 생성형 AI 연산 성능이 기존 대비 5배 이상 향상되었습니다.</p>
+                    <a href="https://nvidianews.nvidia.com/" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+
+            <!-- News Item 4 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1591444029514-996ff69d30f1?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="Material">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-wider">Packaging</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.19</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">글래스 기판 도입 본격화... SKC·삼성전기 시장 선점 경쟁</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">반도체 패키징의 게임 체인저로 불리는 '글래스 기판(Glass Substrate)' 상용화가 임박했습니다. SKC(앱솔릭스)와 삼성전기가 대규모 생산 라인을 가동하며 글로벌 빅테크 기업들과 공급 협상을 진행 중입니다.</p>
+                    <a href="https://www.skc.kr/kor/news/press/list.do" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+
+            <!-- News Item 5 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="CXL">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Connectivity</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.18</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">CXL 3.1 생태계 확장... 데이터센터 메모리 용량 10배 증설 가능</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">컴퓨트 익스프레스 링크(CXL) 3.1 규격이 확산되면서 데이터센터의 메모리 확장성이 극대화되고 있습니다. 삼성전자는 업계 최대 용량의 CXL 3.1 DRAM 모듈을 공개하며 시장 주도권 확보에 나섰습니다.</p>
+                    <a href="https://www.computeexpresslink.org/news-events" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+
+            <!-- News Item 6 -->
+            <article class="news-card bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/10">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover" alt="Politics">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded-md bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider">Policy</span>
+                        <span class="text-on-surface-variant text-xs font-label">2026.04.17</span>
+                    </div>
+                    <h2 class="text-xl font-headline font-bold mb-3 leading-snug">EU 반도체법 2.0 발효... 역내 생산 비중 30%까지 확대 목표</h2>
+                    <p class="text-on-surface-variant text-sm mb-6 line-clamp-3">유럽연합이 반도체 자급률을 높이기 위한 '반도체법 2.0'을 정식 발효했습니다. 대규모 보조금을 통해 인텔, TSMC의 공장 유치를 가속화하고 역내 설계 생태계를 육성한다는 계획입니다.</p>
+                    <a href="https://digital-strategy.ec.europa.eu/en/policies/european-chips-act" target="_blank" class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline">더 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-low w-full border-t border-outline-variant/10 py-12 text-center">
+        <div class="text-lg font-bold text-on-surface font-headline mb-4">SemiWiki</div>
+        <p class="text-on-surface-variant text-sm mb-6">© 2026 SemiWiki. 글로벌 반도체 시장의 신속하고 정확한 정보 전달.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/glossary.js"></script>
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.remove('dark');
+            themeIcon.innerText = 'light_mode';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = 'light_mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = 'dark_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
