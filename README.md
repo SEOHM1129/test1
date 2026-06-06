@@ -1,21 +1,21 @@
-# SemiWiki
+# Semiconductor Engineer Professional Portfolio
 
-글로벌 반도체 최신 뉴스 및 취업 특화 플랫폼.
+반도체 엔지니어를 위한 전문 포트폴리오 플랫폼입니다. 실무 문제 해결 능력과 기술적 깊이를 강조하는 구조로 설계되었습니다.
+
+## 주요 특징
+- **Minimalist Dark Theme:** "The Neon Syntax" 디자인 시스템 기반의 다크 모드 지원.
+- **Projects Showcase:** [문제 정의], [기술적 분석], [성과 및 지표], [사용 툴] 구조의 프로젝트 카드 UI.
+- **Semiconductor Knowledge:** 공정 이슈 및 장비 트러블슈팅 지식 베이스 (검색 및 필터 지원).
+- **Responsive Design:** 데스크탑 및 모바일 최적화.
+- **Interactive Modal:** 프로젝트 상세 정보를 보여주는 인터랙티브 모달.
 
 ## 기술 스택
 - HTML5, Tailwind CSS
 - Vanilla JavaScript
-- GitHub Pages Deployment
+- Google Material Symbols
 
-## 배포 최적화 및 캐시 관리
-최신 변경 사항이 반영되지 않을 경우 다음 단계를 수행하세요.
+## 데이터 수정 방법
+`js/data.js` 파일에서 `projectData` 및 `knowledgeData` 배열을 수정하여 본인의 경력과 지식을 반영할 수 있습니다.
 
-### 1. 강력한 새로고침 (Hard Refresh)
-- **Windows/Linux:** `Ctrl + F5` 또는 `Ctrl + Shift + R`
-- **Mac:** `Cmd + Shift + R`
-
-### 2. Cloudflare Purge (관리자용)
-Cloudflare 대시보드에서 **Caching > Configuration > Purge Everything**을 수행하여 에지 캐시를 초기화하세요.
-
-### 3. 브라우저 캐시 삭제
-브라우저 설정에서 '캐시된 이미지 및 파일'을 삭제한 후 다시 시도하세요.
+## 배포
+GitHub Pages 등을 통해 정적 호스팅이 가능합니다.

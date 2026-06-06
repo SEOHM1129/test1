@@ -3,13 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="google-adsense-account" content="ca-pub-5642514851415348">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5642514851415348"
-     crossorigin="anonymous"></script>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <title>SemiWiki | 글로벌 반도체 최신 뉴스 및 인사이트</title>
+    <title>SemiWiki | Semiconductor Engineer Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -18,6 +12,7 @@
         theme: {
           extend: {
             "colors": {
+                    "surface-container-low": "#0f1930",
                     "surface-container-high": "#141f38",
                     "surface-container-highest": "#192540",
                     "primary": "#3766ff",
@@ -40,7 +35,6 @@
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #95aaff 100%); }
         
-        /* 라이트 모드 스타일 */
         html:not(.dark) body { background-color: #f8fafc; color: #0f172a; }
         html:not(.dark) .bg-background { background-color: #f8fafc; }
         html:not(.dark) .text-on-surface { color: #1e293b; }
@@ -48,7 +42,6 @@
         html:not(.dark) .bg-surface-container-high { background-color: #ffffff; border: 1px solid #e2e8f0; }
         html:not(.dark) .bg-surface-container-low { background-color: #f1f5f9; }
         html:not(.dark) nav { background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #e2e8f0; }
-        html:not(.dark) .circuit-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 32px 32px; }
 
         .input-field {
             width: 100%;
@@ -60,198 +53,270 @@
             transition: all 0.3s;
             outline: none;
         }
-        .input-field:focus {
-            border-color: #bef500;
-            box-shadow: 0 0 0 2px rgba(190, 245, 0, 0.2);
-        }
+        html:not(.dark) .input-field { background-color: #ffffff; border-color: #e2e8f0; color: #0f172a; }
 
         .circuit-bg { background-image: radial-gradient(#192540 1px, transparent 1px); background-size: 32px 32px; }
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
-    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl shadow-sm transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#060e20]/80 backdrop-blur-xl border-b border-outline-variant/10 transition-colors duration-300">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-[#bef500] text-3xl">memory</span>
                 <div class="text-2xl font-bold text-[#dee5ff] tracking-tighter font-headline">SemiWiki</div>
             </div>
             <div class="hidden md:flex items-center gap-10">
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="news.html">최신 뉴스</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="quiz.html">반도체 퀴즈</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="dictionary.html">용어사전</a>
-                <a class="text-[#dee5ff] hover:text-[#3766ff] transition-colors font-headline" href="careers.html">취업로드맵</a>
+                <a class="text-[#dee5ff] hover:text-secondary transition-colors font-headline text-sm uppercase tracking-widest" href="#projects">Projects</a>
+                <a class="text-[#dee5ff] hover:text-secondary transition-colors font-headline text-sm uppercase tracking-widest" href="#knowledge">Semiconductor Knowledge</a>
             </div>
             <div class="flex items-center gap-4">
                 <button id="theme-toggle" class="p-2 rounded-xl bg-surface-container-high hover:scale-110 transition-all border border-outline-variant/20 flex items-center justify-center">
                     <span id="theme-icon" class="material-symbols-outlined text-secondary">dark_mode</span>
-                </button>
-                <button class="bg-[#bef500] text-[#435900] px-6 py-2 rounded-xl font-bold font-headline hover:scale-95 active:scale-90 transition-all">
-                    구독하기
                 </button>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="relative pt-40 pb-20 px-8 overflow-hidden">
-            <div class="absolute inset-0 z-0 pointer-events-none opacity-20 dark:opacity-40">
+        <!-- Hero Section (Junior Portfolio Style) -->
+        <section class="relative pt-48 pb-32 px-8 overflow-hidden">
+            <div class="absolute inset-0 z-0 pointer-events-none opacity-20 dark:opacity-30">
                 <div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
                 <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary rounded-full blur-[120px]"></div>
             </div>
-            <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
-                <div class="mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 inline-flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                    <span class="text-xs font-label text-secondary tracking-widest uppercase">Breaking News: HBM4 Standards Confirmed</span>
-                </div>
-                <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1]">
-                    미래를 설계하는 실리콘, <br/>
-                    <span class="text-secondary dark:text-secondary">SemiWiki</span>와 함께하세요
-                </h1>
-                <p class="max-w-2xl text-lg md:text-xl text-on-surface-variant mb-12 font-body leading-relaxed">
-                    삼성전자, SK하이닉스, TSMC, NVIDIA 등 글로벌 반도체 기업들의 <br/>
-                    최신 소식과 심도 있는 시장 분석을 실시간으로 전해드립니다.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 items-center">
-                    <a href="news.html" class="syntax-gradient text-white px-10 py-4 rounded-xl font-bold font-headline text-lg shadow-lg hover:scale-105 transition-all inline-block">최신 뉴스 보기</a>
-                    <a href="#" class="px-10 py-4 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-variant transition-all flex items-center gap-2">
-                        <span class="material-symbols-outlined">trending_up</span> 시장 데이터
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Job Prep Center Section -->
-        <section class="py-24 px-8 max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4 text-secondary">취업 성공 패키지</h2>
-                <p class="text-on-surface-variant font-body">반도체 기업 취업을 위한 필수 코스: 퀴즈, 용어, 로드맵을 한 번에.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="quiz.html" class="group bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10 hover:border-secondary/50 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-secondary text-3xl">quiz</span>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="flex flex-col items-start max-w-4xl">
+                    <div class="mb-6 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 inline-flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                        <span class="text-xs font-label text-secondary tracking-widest uppercase">Aspiring Semiconductor Engineer</span>
                     </div>
-                    <h3 class="text-xl font-headline font-bold mb-4">오늘의 퀴즈</h3>
-                    <p class="text-on-surface-variant text-xs mb-6">8대 공정과 소자 트렌드를 퀴즈로 풀어보세요.</p>
-                    <span class="text-secondary font-bold text-sm flex items-center gap-2">도전하기 <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                </a>
-                <a href="dictionary.html" class="group bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/50 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-primary text-3xl">menu_book</span>
+                    <h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[1]">
+                        [본인 성함] <span class="text-secondary">/</span> <br/>
+                        [목표 직무: 예-공정기술]
+                    </h1>
+                    <p class="text-xl md:text-2xl text-on-surface-variant mb-12 font-body leading-relaxed max-w-2xl">
+                        반도체 8대 공정에 대한 탄탄한 이론적 기초와 [실습/프로젝트 경험]을 통해 
+                        <strong>수율 최적화</strong>와 <strong>공정 혁신</strong>에 기여하고 싶은 신입 지원자입니다.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <span class="px-5 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/30 text-sm font-label flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary text-sm">target</span> [관심 분야 1: 예-EUV]
+                        </span>
+                        <span class="px-5 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/30 text-sm font-label flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary text-sm">target</span> [관심 분야 2: 예-Plasma Etch]
+                        </span>
                     </div>
-                    <h3 class="text-xl font-headline font-bold mb-4">용어 사전</h3>
-                    <p class="text-on-surface-variant text-xs mb-6">HBM, GAA 등 핵심 기술 용어를 검색하세요.</p>
-                    <span class="text-primary font-bold text-sm flex items-center gap-2">검색하기 <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                </a>
-                <a href="careers.html" class="group bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10 hover:border-secondary/50 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
-                    </div>
-                    <h3 class="text-xl font-headline font-bold mb-4">기술 면접</h3>
-                    <p class="text-on-surface-variant text-xs mb-6">삼성/SK하이닉스 빈출 기술 면접 질문 모음.</p>
-                    <span class="text-secondary font-bold text-sm flex items-center gap-2">준비하기 <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                </a>
-                <a href="careers.html" class="group bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10 hover:border-white/50 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-white text-3xl">route</span>
-                    </div>
-                    <h3 class="text-xl font-headline font-bold mb-4">직무 가이드</h3>
-                    <p class="text-on-surface-variant text-xs mb-6">설계부터 영업까지 직무별 로드맵 확인.</p>
-                    <span class="text-white font-bold text-sm flex items-center gap-2">자세히 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Categories Section (Bento Grid) -->
-        <section id="categories" class="py-24 px-8 max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">주요 뉴스 카테고리</h2>
-                <p class="text-on-surface-variant font-body">분야별 핵심 반도체 트렌드를 확인하세요.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="md:col-span-2 group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="Foundry" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute bottom-0 p-8 z-20">
-                        <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block">Manufacturing</span>
-                        <h3 class="text-2xl font-headline font-bold text-white mb-2">Foundry & Logic</h3>
-                        <p class="text-gray-300 text-sm">TSMC, 삼성전자, 인텔의 2nm 공정 경쟁과 파운드리 시장 재편 소식.</p>
-                    </div>
-                </div>
-                <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="Memory" src="https://images.unsplash.com/photo-1591444029514-996ff69d30f1?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute bottom-0 p-8 z-20">
-                        <span class="text-primary font-label text-xs tracking-widest uppercase mb-2 block">Storage</span>
-                        <h3 class="text-xl font-headline font-bold text-white">Memory (HBM/DRAM)</h3>
-                        <p class="text-gray-300 text-xs">AI 시대를 이끄는 HBM4 개발 현황과 차세대 기술.</p>
-                    </div>
-                </div>
-                <div class="group relative h-[300px] rounded-2xl overflow-hidden bg-surface-container-high hover:scale-[1.02] transition-all duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img class="absolute inset-0 w-full h-full object-cover" alt="AI Chips" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute bottom-0 p-8 z-20">
-                        <span class="text-tertiary font-label text-xs tracking-widest uppercase mb-2 block">Intelligence</span>
-                        <h3 class="text-xl font-headline font-bold text-white">AI & GPU</h3>
-                        <p class="text-gray-300 text-xs">NVIDIA Blackwell 아키텍처와 글로벌 AI 패권 다툼.</p>
+                    <div class="flex gap-4">
+                        <a href="mailto:your-email@example.com" class="syntax-gradient text-white px-8 py-3.5 rounded-xl font-bold font-headline text-lg shadow-lg hover:scale-105 transition-all inline-flex items-center gap-2">
+                            <span class="material-symbols-outlined">mail</span> Contact Me
+                        </a>
+                        <a href="#projects" class="px-8 py-3.5 rounded-xl font-bold font-headline text-lg border border-outline-variant/30 hover:bg-surface-container-high transition-all flex items-center gap-2">
+                            View Work <span class="material-symbols-outlined">arrow_downward</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 px-8 max-w-3xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-headline text-4xl font-bold tracking-tight mb-4">제휴 및 제보</h2>
-                <p class="text-on-surface-variant">SemiWiki와의 협업 제안이나 중요한 반도체 업계 제보를 남겨주세요.</p>
+        <!-- Projects Section (Empty Card Template) -->
+        <section id="projects" class="py-32 px-8 bg-surface-container-low/30 border-y border-outline-variant/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16">
+                    <h2 class="font-headline text-4xl font-bold tracking-tight mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">engineering</span> Core Projects
+                    </h2>
+                    <p class="text-on-surface-variant font-body text-lg">실제 수행한 프로젝트의 목적과 성과를 구체적으로 기술합니다.</p>
+                </div>
+                <div id="project-list" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Dynamic Content via js/data.js -->
+                </div>
             </div>
-            <form action="#" method="POST" class="space-y-6 bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        </section>
+
+        <!-- Knowledge Section (Blog Style List) -->
+        <section id="knowledge" class="py-32 px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div>
-                        <label class="block text-sm font-label mb-2 opacity-70">이름</label>
-                        <input type="text" class="input-field" placeholder="홍길동" required>
+                        <h2 class="font-headline text-4xl font-bold tracking-tight mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">menu_book</span> Semiconductor Knowledge
+                        </h2>
+                        <p class="text-on-surface-variant font-body text-lg">학습한 공정, 장비, 소자 지식을 체계적으로 기록합니다.</p>
                     </div>
-                    <div>
-                        <label class="block text-sm font-label mb-2 opacity-70">이메일</label>
-                        <input type="email" class="input-field" placeholder="example@email.com" required>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="filterKnowledge('all')" class="category-btn active px-4 py-2 rounded-lg bg-surface-container-high text-xs font-label uppercase tracking-wider border border-outline-variant/30 hover:border-secondary transition-all">All</button>
+                        <button onclick="filterKnowledge('공정')" class="category-btn px-4 py-2 rounded-lg bg-surface-container-high text-xs font-label uppercase tracking-wider border border-outline-variant/30 hover:border-secondary transition-all">공정</button>
+                        <button onclick="filterKnowledge('장비')" class="category-btn px-4 py-2 rounded-lg bg-surface-container-high text-xs font-label uppercase tracking-wider border border-outline-variant/30 hover:border-secondary transition-all">장비</button>
+                        <button onclick="filterKnowledge('소자')" class="category-btn px-4 py-2 rounded-lg bg-surface-container-high text-xs font-label uppercase tracking-wider border border-outline-variant/30 hover:border-secondary transition-all">소자</button>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-label mb-2 opacity-70">제목</label>
-                    <input type="text" class="input-field" placeholder="뉴스 제보 드립니다" required>
+
+                <div id="knowledge-list" class="space-y-6">
+                    <!-- Dynamic Content via js/data.js -->
                 </div>
-                <div>
-                    <label class="block text-sm font-label mb-2 opacity-70">내용</label>
-                    <textarea rows="5" class="input-field" placeholder="내용을 입력해주세요" required></textarea>
-                </div>
-                <button type="submit" class="w-full syntax-gradient text-white py-4 rounded-xl font-bold font-headline text-lg hover:scale-[1.02] transition-all shadow-lg">
-                    메시지 보내기
-                </button>
-            </form>
+            </div>
         </section>
     </main>
 
-    <footer class="bg-surface-container-low w-full border-t border-outline-variant/10 py-12 text-center">
-        <div class="text-lg font-bold text-on-surface font-headline mb-4">SemiWiki</div>
-        <p class="text-on-surface-variant text-sm mb-6">© 2026 SemiWiki. 글로벌 반도체 시장의 신속하고 정확한 정보 전달.</p>
-        <div class="flex justify-center gap-6">
-            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">rss_feed</span></a>
-            <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">podcasts</span></a>
-        </div>
+    <footer class="bg-surface-container-low w-full border-t border-outline-variant/10 py-16 text-center">
+        <div class="text-2xl font-bold text-on-surface font-headline mb-4 tracking-tighter">SemiWiki</div>
+        <p class="text-on-surface-variant text-sm mb-8 font-label tracking-widest uppercase">Precision & Scholarly Engineering</p>
+        <div class="text-xs text-on-surface-variant/40">© 2026 Personal Portfolio. Developed with Passion for Semiconductors.</div>
     </footer>
 
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-background/90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-surface-container-high w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border border-outline-variant/30 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-surface-container-highest hover:scale-110 transition-all">
+                <span class="material-symbols-outlined text-on-surface">close</span>
+            </button>
+            <div id="modal-content" class="p-8 md:p-12">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
     <script>
+        // Project Rendering
+        function renderProjects() {
+            const projectList = document.getElementById('project-list');
+            projectList.innerHTML = window.portfolioData.projects.map(proj => `
+                <div onclick="openProjectModal('${proj.id}')" class="group bg-surface-container-high p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/50 transition-all duration-300 cursor-pointer flex flex-col h-full">
+                    <h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-primary transition-colors">${proj.title}</h3>
+                    <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">${proj.summary}</p>
+                    
+                    <div class="space-y-6 flex-1">
+                        <div>
+                            <span class="text-[10px] font-label text-secondary uppercase tracking-widest block mb-2 opacity-70">[기술적 접근 방식]</span>
+                            <p class="text-sm text-on-surface font-body leading-relaxed">${proj.approach}</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-label text-secondary uppercase tracking-widest block mb-2 opacity-70">[성과]</span>
+                            <p class="text-sm text-on-surface font-body leading-relaxed font-bold">${proj.result}</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-outline-variant/10 flex flex-wrap gap-2">
+                        ${proj.techStack.map(tech => `<span class="px-3 py-1 rounded-md bg-background text-[10px] font-label text-on-surface-variant border border-outline-variant/20">${tech}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Knowledge Rendering
+        function renderKnowledge(category = 'all') {
+            const knowledgeList = document.getElementById('knowledge-list');
+            const filtered = category === 'all' 
+                ? window.portfolioData.knowledge 
+                : window.portfolioData.knowledge.filter(k => k.category === category);
+
+            knowledgeList.innerHTML = filtered.map(item => `
+                <div onclick="openKnowledgeModal('${item.id}')" class="group bg-surface-container-high/40 p-6 rounded-2xl border border-outline-variant/10 hover:bg-surface-container-high transition-all cursor-pointer flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="w-full md:w-32 flex-shrink-0">
+                        <span class="px-3 py-1 rounded-md bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest">${item.category}</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="text-xs text-on-surface-variant mb-1 font-label">${item.date}</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">${item.title}</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-1">${item.description}</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        ${item.tags.map(tag => `<span class="text-[10px] text-on-surface-variant/70 italic">#${tag}</span>`).join('')}
+                    </div>
+                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors">arrow_forward</span>
+                </div>
+            `).join('');
+        }
+
+        function filterKnowledge(category) {
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.innerText === 'All'));
+                if (btn.classList.contains('active')) {
+                    btn.classList.add('bg-secondary/10', 'text-secondary', 'border-secondary/50');
+                } else {
+                    btn.classList.remove('bg-secondary/10', 'text-secondary', 'border-secondary/50');
+                }
+            });
+            renderKnowledge(category);
+        }
+
+        // Modal Logic
+        function openProjectModal(id) {
+            const proj = window.portfolioData.projects.find(p => p.id === id);
+            const content = `
+                <div class="mb-10">
+                    <span class="text-primary font-label text-xs tracking-widest uppercase mb-4 block">Core Project Detail</span>
+                    <h2 class="text-4xl font-headline font-bold mb-6">${proj.title}</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        ${proj.techStack.map(tech => `<span class="px-4 py-2 rounded-lg bg-background border border-outline-variant/30 text-xs font-label text-on-surface">${tech}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+                    <div class="p-6 rounded-2xl bg-background border border-outline-variant/20">
+                        <h4 class="text-xs font-label text-secondary uppercase tracking-widest mb-4">Summary</h4>
+                        <p class="text-on-surface leading-relaxed">${proj.summary}</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-background border border-outline-variant/20">
+                        <h4 class="text-xs font-label text-secondary uppercase tracking-widest mb-4">Technical Approach</h4>
+                        <p class="text-on-surface leading-relaxed">${proj.approach}</p>
+                    </div>
+                </div>
+                <div class="p-8 rounded-2xl bg-primary/5 border border-primary/20 mb-10">
+                    <h4 class="text-xs font-label text-primary uppercase tracking-widest mb-4">Results & Metrics</h4>
+                    <p class="text-lg font-bold text-on-surface leading-relaxed">${proj.result}</p>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <h4 class="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-6">Detailed Description</h4>
+                    <div class="text-on-surface-variant font-body leading-relaxed whitespace-pre-wrap">${proj.detailDescription}</div>
+                </div>
+            `;
+            showModal(content);
+        }
+
+        function openKnowledgeModal(id) {
+            const item = window.portfolioData.knowledge.find(k => k.id === id);
+            const content = `
+                <div class="mb-10">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest">${item.category}</span>
+                        <span class="text-xs text-on-surface-variant font-label">${item.date}</span>
+                    </div>
+                    <h2 class="text-4xl font-headline font-bold mb-8">${item.title}</h2>
+                    <div class="flex flex-wrap gap-2 mb-10">
+                        ${item.tags.map(tag => `<span class="text-xs text-secondary font-label italic">#${tag}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <div class="text-lg text-on-surface mb-10 border-l-4 border-secondary pl-6 italic">${item.description}</div>
+                    <div class="text-on-surface-variant font-body leading-relaxed whitespace-pre-wrap">${item.content}</div>
+                </div>
+            `;
+            showModal(content);
+        }
+
+        function showModal(content) {
+            const modal = document.getElementById('detail-modal');
+            document.getElementById('modal-content').innerHTML = content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Theme Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
-
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        if (currentTheme === 'light') {
-            html.classList.remove('dark');
-            themeIcon.innerText = 'light_mode';
-        }
 
         themeToggleBtn.addEventListener('click', () => {
             if (html.classList.contains('dark')) {
@@ -263,6 +328,18 @@
                 themeIcon.innerText = 'dark_mode';
                 localStorage.setItem('theme', 'dark');
             }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                html.classList.remove('dark');
+                themeIcon.innerText = 'light_mode';
+            }
+            renderProjects();
+            renderKnowledge();
+            // Initialize filter button style
+            filterKnowledge('all');
         });
     </script>
 </body>
