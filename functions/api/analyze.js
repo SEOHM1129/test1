@@ -7,15 +7,16 @@ export async function onRequestPost(context) {
 
   try {
     const { query } = await context.request.json();
-    const apiKey = context.env.GEMINI_API_KEY; // Cloudflare 대시보드에서 등록할 변수
+    const apiKey = context.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      return new Response(JSON.stringify({ error: "API Key Missing" }), {
+      return new Response(JSON.stringify({ error: "Cloudflare 대시보드에 GEMINI_API_KEY가 설정되지 않았습니다." }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
+    // Gemini API 호출
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const systemPrompt = `
@@ -40,6 +41,14 @@ Return ONLY valid JSON matching this schema:
         contents: [{ parts: [{ text: systemPrompt }] }]
       })
     });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      return new Response(JSON.stringify({ error: `Gemini API 호출 실패: ${errText}` }), {
+        status: response.status,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
 
     const data = await response.json();
     const rawText = data.candidates[0].content.parts[0].text;
