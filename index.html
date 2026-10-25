@@ -112,7 +112,9 @@
                 <h3 class="font-headline text-xl font-bold flex items-center gap-2">
                     <span class="material-symbols-outlined text-secondary">description</span> 엔지니어링 이슈 분석 리포트
                 </h3>
-                <span class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold">AI Generated · Unverified</span>
+                <span
+                    class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold">AI
+                    Generated · Unverified</span>
             </div>
             <div id="reportContent" class="text-sm text-on-surface leading-relaxed space-y-4 font-body"></div>
         </div>
@@ -210,7 +212,32 @@
                     throw new Error('AI 응답 형식이 올바르지 않습니다.');
                 }
 
-                s1.textContent = 'Gemini API 분석 응답 수신 완료';
+
+                // 실제 서버 응답에 3단계 결과가 있는지 확인
+                if (
+                    !result.intent_context ||
+                    !Array.isArray(result.sub_tasks) ||
+                    result.sub_tasks.length !== 3 ||
+                    !result.domain_review ||
+                    result.domain_review.review_status !==
+                    'NEEDS_ENGINEER_VALIDATION'
+                ) {
+                    throw new Error(
+                        '3단계 AI 분석 결과가 완전하지 않습니다.'
+                    );
+                }
+
+                // 실제 결과를 받은 후 단계별 실행 상태 표시
+                s1.textContent =
+                    '1단계 완료: Intent & Context Parser';
+
+                s2.textContent =
+                    '2단계 완료: Sub-task Planner & Analyst';
+
+                s3.textContent =
+                    '3단계 완료: Domain Verifier & Critic ' +
+                    '(AI 자기검토 · 엔지니어 검증 필요)';
+
 
                 // 기존 리포트 영역 초기화
                 content.replaceChildren();
@@ -241,6 +268,48 @@
                 addSection(
                     '1. Root Cause Analysis (원인 분석)',
                     [result.root_cause]
+                );
+
+                // 1단계: 공정 맥락 표시
+                const ctx = result.intent_context;
+
+                addSection(
+                    '3. Intent & Context (공정 맥락)',
+                    [
+                        '공정: ' + ctx.process,
+                        '핵심 변수: ' + ctx.target_variable,
+                        '관찰된 현상: ' + ctx.observed_issue,
+                        '분석 목표: ' + ctx.analysis_goal
+                    ]
+                );
+
+                // 2단계: 하위 분석 과제 표시
+                addSection(
+                    '4. Sub-task Planner (하위 분석 과제)',
+                    result.sub_tasks.map((item, index) =>
+                        `${index + 1}. ${item.task}\n` +
+                        `목적: ${item.purpose}\n` +
+                        `필요 데이터: ${item.required_evidence}`
+                    )
+                );
+
+                // 3단계: AI 자기검토 결과 표시
+                const review = result.domain_review;
+
+                addSection(
+                    '5. Domain Review (AI 자기검토)',
+                    [
+                        '검토 요약: ' + review.review_summary,
+                        '발견된 문제:',
+                        ...review.issues_found.map(
+                            item => '- ' + item
+                        ),
+                        '추가 검증 필요 데이터:',
+                        ...review.missing_evidence.map(
+                            item => '- ' + item
+                        ),
+                        '최종 상태: 엔지니어 검증 필요'
+                    ]
                 );
 
                 addSection(
