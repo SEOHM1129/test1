@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
     }
 
     // Gemini API 호출
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`;
 
     const systemPrompt = `
 You are an expert Semiconductor Process & Device Engineer AI Assistant at SK Hynix.
