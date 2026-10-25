@@ -124,6 +124,22 @@ Rules:
 - process: semiconductor process mentioned
 - target_variable: main process parameter
 - observed_issue: reported abnormal phenomenon
+
+- Distinguish three concepts:
+  1. Changed process parameter or controlled condition
+  2. Observed output or quality metric
+  3. Engineering analysis objective
+- target_variable must represent the changed condition,
+  not the measured response.
+- If the question describes EOT reduction followed by
+  Gate Leakage increase, target_variable is EOT,
+  while Gate Leakage is the observed output metric.
+- If the question describes RF Power increase followed by
+  Etch Uniformity degradation, target_variable is RF Power,
+  while Etch Uniformity is the observed output metric.
+- If no changed parameter is identified, use "Unknown".
+- Never invent a changed process parameter.
+
 - analysis_goal: what the user wants to know
 - missing_information: important information
   needed to verify the physical cause
@@ -289,11 +305,28 @@ Check for:
 3. Physical or chemical reasoning inconsistencies.
 4. Missing equipment or measurement information.
 5. Unsafe or unjustified process optimization proposals.
-6. Unspecified Source RF versus Bias RF effects.
+
+6. Whether the review criteria are relevant to the
+   specific semiconductor process being analyzed.
+7. Whether the proposed measurement methods can
+   actually verify the stated physical mechanism.
+8. Whether changed process conditions and observed
+   output metrics have been distinguished correctly.
+
+Process-specific rules:
+- Apply Source RF versus Bias RF considerations only
+  when the user's question concerns plasma or RF processes.
+- For High-k ALD and EOT questions, examine dielectric
+  thickness, dielectric constant, interfacial layers,
+  material defects, leakage mechanisms, and thermal budget
+  only where relevant.
+- Do not introduce unrelated RF or plasma conditions.
+- Do not claim that C-V, I-V, SIMS, RBS, or XRD alone
+  directly measures oxygen-vacancy or trap density.
+- Distinguish direct measurements from indirect evidence.
+
 
 Important:
-- RF Power is the changed parameter in this question.
-- Etch Uniformity is the observed quality metric.
 - Do not invent measurement values.
 - Treat all unverified mechanisms as hypotheses.
 - Do not recommend immediate production recipe changes.
