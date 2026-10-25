@@ -112,9 +112,7 @@
                 <h3 class="font-headline text-xl font-bold flex items-center gap-2">
                     <span class="material-symbols-outlined text-secondary">description</span> 엔지니어링 이슈 분석 리포트
                 </h3>
-                <span
-                    class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold">AI
-                    Generated · Unverified</span>
+                
             </div>
             <div id="reportContent" class="text-sm text-on-surface leading-relaxed space-y-4 font-body"></div>
         </div>
@@ -325,8 +323,29 @@
                 // 기존 Verification PASS 배지의 오해 방지
                 const badge = report.querySelector('span');
                 if (badge) {
-                    badge.textContent = 'AI 분석 초안 · 미검증';
+                    badge.textContent = 'AI 분석 초안';
                 }
+
+        // STEP A-18: 보고서 섹션을 번호순으로 정렬
+        const sections = Array.from(content.children);
+
+        function getSectionNumber(section) {
+            const heading = section.querySelector('h4');
+
+            if (!heading) return 999;
+
+            const match = heading.textContent
+                .trim()
+                .match(/^(\d+)\./);
+
+            return match ? Number(match[1]) : 999;
+        }
+
+        sections.sort(
+            (a, b) => getSectionNumber(a) - getSectionNumber(b)
+        );
+
+        content.replaceChildren(...sections);
 
                 report.classList.remove('hidden');
 
