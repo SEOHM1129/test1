@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html class="dark" lang="ko">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>SemiWiki | AI Process Engineering Agent</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-low": "#0f1930",
-              "surface-container-high": "#141f38",
-              "primary": "#3766ff",
-              "secondary": "#bef500",
-              "background": "#060e20",
-              "on-surface": "#dee5ff",
-              "on-surface-variant": "#a3aac4"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#0f1930",
+                        "surface-container-high": "#141f38",
+                        "primary": "#3766ff",
+                        "secondary": "#bef500",
+                        "background": "#060e20",
+                        "on-surface": "#dee5ff",
+                        "on-surface-variant": "#a3aac4"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"]
+                    }
+                }
             }
-          }
         }
-      }
     </script>
     <style>
-      .syntax-gradient { background: linear-gradient(135deg, #3766ff 0%, #bef500 100%); }
+        .syntax-gradient {
+            background: linear-gradient(135deg, #3766ff 0%, #bef500 100%);
+        }
     </style>
 </head>
+
 <body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
     <!-- Navigation -->
     <nav class="w-full z-50 bg-[#060e20]/80 backdrop-blur-xl border-b border-white/10 px-8 py-4">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-secondary text-3xl">memory</span>
-                <div class="text-2xl font-bold text-[#dee5ff] font-headline tracking-tight">SemiWiki <span class="text-xs px-2 py-0.5 rounded bg-primary/30 text-primary border border-primary/50">Agentic AI v1.0</span></div>
+                <div class="text-2xl font-bold text-[#dee5ff] font-headline tracking-tight">SemiWiki <span
+                        class="text-xs px-2 py-0.5 rounded bg-primary/30 text-primary border border-primary/50">Agentic
+                        AI v1.0</span></div>
             </div>
             <div class="text-xs text-on-surface-variant font-mono">SK Hynix Engineering Framework</div>
         </div>
@@ -47,8 +55,10 @@
     <main class="flex-1 max-w-5xl w-full mx-auto px-6 py-12">
         <!-- Hero Title -->
         <div class="text-center mb-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-white/10 text-xs font-mono text-secondary mb-4">
-                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Multi-step Self-Correction Engine Enabled
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-white/10 text-xs font-mono text-secondary mb-4">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Multi-step Self-Correction Engine
+                Enabled
             </div>
             <h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-4">
                 반도체 공정·소자 이슈 분석 <span class="text-secondary">AI Agent</span>
@@ -60,38 +70,51 @@
 
         <!-- Input Box -->
         <div class="bg-surface-container-high p-6 rounded-2xl border border-white/10 shadow-2xl mb-8">
-            <label class="block text-xs font-mono text-secondary uppercase tracking-widest mb-2">Process Issue Query</label>
-            <textarea id="issueInput" class="w-full h-28 bg-background border border-white/10 rounded-xl p-4 text-on-surface focus:outline-none focus:border-primary transition-all text-sm resize-none" placeholder="예: High-k ALD 공정 중 EOT 축소 과정에서 발생한 Gate Leakage Current 증가 원인 추적 및 최적화 조건 제안"></textarea>
+            <label class="block text-xs font-mono text-secondary uppercase tracking-widest mb-2">Process Issue
+                Query</label>
+            <textarea id="issueInput"
+                class="w-full h-28 bg-background border border-white/10 rounded-xl p-4 text-on-surface focus:outline-none focus:border-primary transition-all text-sm resize-none"
+                placeholder="예: High-k ALD 공정 중 EOT 축소 과정에서 발생한 Gate Leakage Current 증가 원인 추적 및 최적화 조건 제안"></textarea>
             <div class="flex justify-end mt-4">
-                <button id="submitBtn" onclick="runAgentWorkflow()" class="syntax-gradient text-background font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all flex items-center gap-2 text-sm">
+                <button id="submitBtn" onclick="runAgentWorkflow()"
+                    class="syntax-gradient text-background font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all flex items-center gap-2 text-sm">
                     <span class="material-symbols-outlined text-sm">smart_toy</span> Agentic Workflow 실행
                 </button>
             </div>
         </div>
 
         <!-- Pipeline Workflow Monitor -->
-        <div id="workflowMonitor" class="hidden bg-surface-container-low p-6 rounded-2xl border border-white/10 mb-8 space-y-3">
-            <h3 class="text-xs font-mono uppercase tracking-widest text-on-surface-variant mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-base">alt_route</span> Agentic Reasoning Pipeline
+        <div id="workflowMonitor"
+            class="hidden bg-surface-container-low p-6 rounded-2xl border border-white/10 mb-8 space-y-3">
+            <h3
+                class="text-xs font-mono uppercase tracking-widest text-on-surface-variant mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-base">alt_route</span> Agentic Reasoning
+                Pipeline
             </h3>
-            <div id="step1" class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3">
+            <div id="step1"
+                class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3">
                 <span class="material-symbols-outlined text-sm">pending</span> 1단계: Intent & Context Parser
             </div>
-            <div id="step2" class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50">
+            <div id="step2"
+                class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50">
                 <span class="material-symbols-outlined text-sm">pending</span> 2단계: Sub-task Planner & Analyst
             </div>
-            <div id="step3" class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50">
+            <div id="step3"
+                class="p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50">
                 <span class="material-symbols-outlined text-sm">pending</span> 3단계: Domain Verifier & Critic
             </div>
         </div>
 
         <!-- Final Report View -->
-        <div id="reportView" class="hidden bg-surface-container-high p-8 rounded-2xl border border-secondary/30 shadow-2xl">
+        <div id="reportView"
+            class="hidden bg-surface-container-high p-8 rounded-2xl border border-secondary/30 shadow-2xl">
             <div class="flex justify-between items-center mb-6 pb-4 border-b border-white/10">
                 <h3 class="font-headline text-xl font-bold flex items-center gap-2">
                     <span class="material-symbols-outlined text-secondary">description</span> 엔지니어링 이슈 분석 리포트
                 </h3>
-                <span class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold">Verification PASS</span>
+                <span
+                    class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-mono font-bold">Verification
+                    PASS</span>
             </div>
             <div id="reportContent" class="text-sm text-on-surface leading-relaxed space-y-4 font-body"></div>
         </div>
@@ -105,7 +128,7 @@
         // Semiconductor Domain Knowledge Base & Parser
         function analyzeProcessQuery(query) {
             const lower = query.toLowerCase();
-            
+
             if (lower.includes('eot') || lower.includes('leakage') || lower.includes('high-k') || lower.includes('ald')) {
                 return {
                     root_cause: "High-k 물질(HfO2/ZrO2) ALD 증착 과정에서 EOT 축소를 위해 막 두께를 비이상적으로 감소시킴에 따라 Boundary Grain Trap 밀도 상승 및 Direct Tunneling 전류 폭증 발생. 또한 Pre-clean 단계의 계면 산화막(SiO2 Interlayer) 불균일성이 Gate Leakage Path를 형성함.",
@@ -136,72 +159,121 @@
             }
         }
 
+
         async function runAgentWorkflow() {
-            const query = document.getElementById('issueInput').value;
-            if(!query) return alert('분석할 이슈를 입력해 주세요.');
+            const query = document.getElementById('issueInput').value.trim();
+
+            if (!query) {
+                alert('분석할 공정 이슈를 입력해 주세요.');
+                return;
+            }
 
             const monitor = document.getElementById('workflowMonitor');
             const report = document.getElementById('reportView');
             const submitBtn = document.getElementById('submitBtn');
-
-            monitor.classList.remove('hidden');
-            report.classList.add('hidden');
-            submitBtn.disabled = true;
+            const content = document.getElementById('reportContent');
 
             const s1 = document.getElementById('step1');
             const s2 = document.getElementById('step2');
             const s3 = document.getElementById('step3');
 
-            // 1단계: Intent & Context Parser
-            s1.className = "p-3 rounded-lg bg-background border border-primary/40 text-xs font-mono text-primary flex items-center gap-3";
-            s1.innerHTML = '<span class="material-symbols-outlined text-primary animate-spin text-sm">sync</span> 1단계: Intent & Context Parser (엔지니어링 의도 및 주요 변수 파싱 중...)';
-            
-            s2.className = "p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50";
-            s2.innerHTML = '<span class="material-symbols-outlined text-sm">pending</span> 2단계: Sub-task Planner & Analyst 대기 중...';
+            monitor.classList.remove('hidden');
+            report.classList.add('hidden');
+            submitBtn.disabled = true;
 
-            s3.className = "p-3 rounded-lg bg-background border border-white/5 text-xs font-mono text-on-surface-variant flex items-center gap-3 opacity-50";
-            s3.innerHTML = '<span class="material-symbols-outlined text-sm">pending</span> 3단계: Domain Verifier & Critic 대기 중...';
+            // 현재 구현된 기능을 정확하게 표시
+            s1.textContent = 'AI 분석 API 요청 중...';
+            s2.textContent = '하위 과제 자동 계획: 미구현';
+            s3.textContent = '독립적인 도메인 검증: 미구현';
 
-            // Pipeline Simulation & Execution
-            setTimeout(() => {
-                s1.className = "p-3 rounded-lg bg-background border border-secondary/40 text-xs font-mono text-secondary flex items-center gap-3";
-                s1.innerHTML = '<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 1단계 완료: 공정 변수 및 물리 현상 맥락 추출 성공';
+            try {
+                // Cloudflare Function 호출
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    },
+                    body: JSON.stringify({ query })
+                });
 
-                s2.className = "p-3 rounded-lg bg-background border border-primary/40 text-xs font-mono text-primary flex items-center gap-3";
-                s2.innerHTML = '<span class="material-symbols-outlined text-primary animate-spin text-sm">sync</span> 2단계: Sub-task Planner & Analyst (도메인 분할 추론 실행 중...)';
-            }, 800);
+                const result = await response.json();
 
-            setTimeout(() => {
-                s2.className = "p-3 rounded-lg bg-background border border-secondary/40 text-xs font-mono text-secondary flex items-center gap-3";
-                s2.innerHTML = '<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 2단계 완료: 물리적 메커니즘 도출 및 최적화 조건 생성';
+                if (!response.ok) {
+                    throw new Error(
+                        result.error || `HTTP ${response.status}`
+                    );
+                }
 
-                s3.className = "p-3 rounded-lg bg-background border border-primary/40 text-xs font-mono text-primary flex items-center gap-3";
-                s3.innerHTML = '<span class="material-symbols-outlined text-primary animate-spin text-sm">sync</span> 3단계: Domain Verifier & Critic (Self-Correction 물리 법칙 검증 중...)';
-            }, 1800);
+                // API 응답 구조 검증
+                if (
+                    typeof result.root_cause !== 'string' ||
+                    !Array.isArray(result.proposals)
+                ) {
+                    throw new Error('AI 응답 형식이 올바르지 않습니다.');
+                }
 
-            setTimeout(() => {
-                const result = analyzeProcessQuery(query);
+                s1.textContent = 'Gemini API 분석 응답 수신 완료';
 
-                s3.className = "p-3 rounded-lg bg-background border border-secondary/40 text-xs font-mono text-secondary flex items-center gap-3";
-                s3.innerHTML = '<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 3단계 완료: Self-Correction 검증 완료 (물리적 타당성 통과)';
+                // 기존 리포트 영역 초기화
+                content.replaceChildren();
 
-                // Render Final Report
+                // 외부 AI 결과는 HTML로 삽입하지 않음
+                function addSection(title, items) {
+                    const section = document.createElement('div');
+                    section.className =
+                        'p-4 bg-background/50 rounded-xl border border-white/5';
+
+                    const heading = document.createElement('h4');
+                    heading.className =
+                        'font-bold text-secondary text-xs font-mono uppercase mb-2';
+                    heading.textContent = title;
+                    section.appendChild(heading);
+
+                    for (const item of items) {
+                        const paragraph = document.createElement('p');
+                        paragraph.className =
+                            'text-on-surface-variant leading-relaxed mb-2';
+                        paragraph.textContent = item;
+                        section.appendChild(paragraph);
+                    }
+
+                    content.appendChild(section);
+                }
+
+                addSection(
+                    '1. Root Cause Analysis (원인 분석)',
+                    [result.root_cause]
+                );
+
+                addSection(
+                    '2. Actionable Proposals (개선안)',
+                    result.proposals.map(String)
+                );
+
+                addSection(
+                    '분석 결과 안내',
+                    ['AI가 생성한 분석 초안입니다. 실제 공정 원인이나 물리적 타당성이 검증된 결과는 아닙니다.']
+                );
+
+                // 기존 Verification PASS 배지의 오해 방지
+                const badge = report.querySelector('span');
+                if (badge) {
+                    badge.textContent = 'AI 분석 초안 · 미검증';
+                }
+
                 report.classList.remove('hidden');
-                document.getElementById('reportContent').innerHTML = `
-                    <div class="p-4 bg-background/50 rounded-xl border border-white/5">
-                        <h4 class="font-bold text-secondary text-xs font-mono uppercase mb-2">1. Root Cause Analysis (원인 추적)</h4>
-                        <p class="text-on-surface-variant leading-relaxed">${result.root_cause}</p>
-                    </div>
-                    <div class="p-4 bg-background/50 rounded-xl border border-white/5">
-                        <h4 class="font-bold text-secondary text-xs font-mono uppercase mb-2">2. Actionable Proposals (공정 최적화 조건)</h4>
-                        <ul class="list-disc list-inside text-on-surface-variant space-y-1">
-                            ${result.proposals.map(prop => `<li>${prop}</li>`).join('')}
-                        </ul>
-                    </div>
-                `;
+
+            } catch (error) {
+                s1.textContent = 'AI 분석 요청 실패';
+                alert('분석 오류: ' + error.message);
+                console.error(error);
+
+            } finally {
                 submitBtn.disabled = false;
-            }, 2600);
+            }
         }
+
     </script>
 </body>
+
 </html>
